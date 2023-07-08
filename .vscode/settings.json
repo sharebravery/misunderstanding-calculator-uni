@@ -1,0 +1,43 @@
+{
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": false,
+
+  /**
+   * 解决 unocss @apply 警告问题
+   * @see https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
+   */
+  "scss.lint.unknownAtRules": "ignore",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#303162",
+    "activityBar.background": "#303162",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ffffff99",
+    "activityBarBadge.background": "#ab5456",
+    "activityBarBadge.foreground": "#ffffff",
+    "commandCenter.border": "#ffffff99",
+    "panel.border": "#303162",
+    "sash.hoverBorder": "#303162",
+    "statusBar.background": "#1f2040",
+    "statusBar.border": "#1f2040",
+    "statusBar.debuggingBackground": "#403f1f",
+    "statusBar.debuggingBorder": "#403f1f",
+    "statusBar.debuggingForeground": "#ffffff",
+    "statusBar.foreground": "#ffffff",
+    "statusBarItem.hoverBackground": "#303162",
+    "statusBarItem.remoteBackground": "#1f2040",
+    "statusBarItem.remoteForeground": "#ffffff",
+    "tab.activeBorder": "#303162",
+    "titleBar.activeBackground": "#1f2040",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.border": "#1f2040",
+    "titleBar.inactiveBackground": "#1f204099",
+    "titleBar.inactiveForeground": "#ffffff99"
+  },
+  "peacock.color": "1f2040"
+}

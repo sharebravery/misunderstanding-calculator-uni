@@ -1,0 +1,38 @@
+{
+  // Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+
+  "Vue3.2+/uni快速生成模板": {
+    "prefix": "Vue3.2+",
+    "body": [
+      "<route lang=\"yaml\">",
+      "name: PageName",
+      "style:",
+      "  navigationBarTitleText: PageTitle",
+      "</route>\n",
+
+      "<script setup lang=\"ts\">",
+      "$1",
+      "</script>\n",
+      "<template>",
+      "  <view class=\"container\">$0</view>",
+      "</template>\n"
+    ],
+    "description": "Vue3.2+"
+  },
+
+  "快速生成 Scss 段落": {
+    "prefix": "style",
+    "body": ["<style lang=\"scss\" scoped>", "$2", "</style>\n"],
+    "description": "快速生成 scss 段落"
+  },
+
+  "视图容器": {
+    "prefix": "view",
+    "body": ["<view>","$2", "</view>\n"],
+    "description": "view容器"
+  }
+}
