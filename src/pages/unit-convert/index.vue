@@ -26,15 +26,15 @@ watchEffect(() => {
       <text>源数据</text>
       <view>
         <uni-easyinput v-bind="$attrs" v-model="info.formValue" type="number" placeholder="请输入数字" />
-        <uni-data-checkbox v-model="info.formUnit" mode="button" :localdata="volumeUnits" />
+        <uni-data-checkbox v-model="info.formUnit" mode="button" :localdata="vUnits" />
       </view>
     </view>
     <view>
       <text>结果</text>
       <view>
-        {{ info.toValue }}
+        {{ convertToScientificNotation(info.toValue) }}
       </view>
-      <uni-data-checkbox v-model="info.toUnit" mode="button" :localdata="volumeUnits" />
+      <uni-data-checkbox v-model="info.toUnit" mode="button" :localdata="vUnits" />
     </view>
   </view>
 </template>

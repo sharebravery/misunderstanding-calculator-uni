@@ -16,7 +16,7 @@ export default defineUniPages({
   },
   pages: [],
   globalStyle: {
-    'navigationBarTitleText': 'ch2-design-pro-uni',
+    'navigationBarTitleText': 'misunderstanding-calculator-uni',
     'navigationBarBackgroundColor': '@navBgColor',
     'navigationBarTextStyle': '@navTxtStyle',
     'backgroundColor': '@bgColor',

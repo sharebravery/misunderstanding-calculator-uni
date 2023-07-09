@@ -9,6 +9,8 @@ declare global {
   const cUnits: typeof import('./src/common/calcaulator')['cUnits']
   const computed: typeof import('vue')['computed']
   const convertConcentration: typeof import('./src/common/calcaulator')['convertConcentration']
+  const convertMolarConcentration: typeof import('./src/common/calcaulator')['convertMolarConcentration']
+  const convertToScientificNotation: typeof import('./src/common/calcaulator')['convertToScientificNotation']
   const convertVolume: typeof import('./src/common/calcaulator')['convertVolume']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -104,6 +106,8 @@ declare module 'vue' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly cUnits: UnwrapRef<typeof import('./src/common/calcaulator')['cUnits']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly convertMolarConcentration: UnwrapRef<typeof import('./src/common/calcaulator')['convertMolarConcentration']>
+    readonly convertToScientificNotation: UnwrapRef<typeof import('./src/common/calcaulator')['convertToScientificNotation']>
     readonly convertVolume: UnwrapRef<typeof import('./src/common/calcaulator')['convertVolume']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
@@ -120,7 +124,6 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
-    readonly molConvertConcentration: UnwrapRef<typeof import('./src/common/calcaulator')['molConvertConcentration']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onAddToFavorites: UnwrapRef<typeof import('@dcloudio/uni-app')['onAddToFavorites']>
@@ -180,7 +183,6 @@ declare module 'vue' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly vUnits: UnwrapRef<typeof import('./src/common/calcaulator')['vUnits']>
-    readonly volumeUnits: UnwrapRef<typeof import('./src/common/calcaulator')['volumeUnits']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
@@ -192,6 +194,8 @@ declare module '@vue/runtime-core' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly cUnits: UnwrapRef<typeof import('./src/common/calcaulator')['cUnits']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly convertMolarConcentration: UnwrapRef<typeof import('./src/common/calcaulator')['convertMolarConcentration']>
+    readonly convertToScientificNotation: UnwrapRef<typeof import('./src/common/calcaulator')['convertToScientificNotation']>
     readonly convertVolume: UnwrapRef<typeof import('./src/common/calcaulator')['convertVolume']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
@@ -208,7 +212,6 @@ declare module '@vue/runtime-core' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
-    readonly molConvertConcentration: UnwrapRef<typeof import('./src/common/calcaulator')['molConvertConcentration']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onAddToFavorites: UnwrapRef<typeof import('@dcloudio/uni-app')['onAddToFavorites']>
@@ -268,7 +271,6 @@ declare module '@vue/runtime-core' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly vUnits: UnwrapRef<typeof import('./src/common/calcaulator')['vUnits']>
-    readonly volumeUnits: UnwrapRef<typeof import('./src/common/calcaulator')['volumeUnits']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

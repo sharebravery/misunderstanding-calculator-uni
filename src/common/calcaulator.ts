@@ -6,47 +6,36 @@
 
 export const cUnits = reactive([
   {
-    text: 'fM',
-    value: 'fM',
-  },
-  {
-    text: 'pM',
-    value: 'pM',
-  },
-  {
-    text: 'μM',
-    value: 'μM',
+    text: 'M',
+    value: 'M',
   },
   {
     text: 'mM',
     value: 'mM',
   },
   {
-    text: 'M',
-    value: 'M',
+    text: 'μM',
+    value: 'μM',
+  },
+  {
+    text: 'nM',
+    value: 'nM',
+  },
+  {
+    text: 'pM',
+    value: 'pM',
+  },
+  {
+    text: 'fM',
+    value: 'fM',
   },
 ])
 
 export const vUnits = reactive([
   {
-    text: 'nL',
-    value: 'nL',
-  },
-  {
-    text: 'μL',
-    value: 'μL',
-  },
-  {
-    text: 'mL',
-    value: 'mL',
-  },
-  {
     text: 'L',
     value: 'L',
   },
-])
-
-export const volumeUnits = reactive([
   {
     text: 'mL',
     value: 'mL',
@@ -64,8 +53,8 @@ export const volumeUnits = reactive([
     value: 'pL',
   },
   {
-    text: 'L',
-    value: 'L',
+    text: 'fL',
+    value: 'fL',
   },
   {
     text: 'cm³',
@@ -85,21 +74,30 @@ export const volumeUnits = reactive([
  * @param {string} unit
  * @return {*}  {number}
  */
-export function molConvertConcentration(value: number, unit: string): number {
+export function convertMolarConcentration(value: number, fromUnit: string, toUnit: string): number {
   const conversionTable = {
-    fM: 1e-15,
-    pM: 1e-12,
-    μM: 1e-6,
-    mM: 1,
-    M: 1e3,
+    M: 1000000000000000,
+    mM: 1000000000000,
+    μM: 1000000000,
+    nM: 1000000,
+    pM: 1000,
+    fM: 1,
   }
 
-  if (unit in conversionTable)
-    return value * conversionTable[unit as keyof typeof conversionTable]
+  if (fromUnit in conversionTable && toUnit in conversionTable)
+    return (value * conversionTable[fromUnit as keyof typeof conversionTable]) / conversionTable[toUnit as keyof typeof conversionTable]
 
-  // 默认单位是 mM
+  // 默认单位是飞摩尔（fM）
   return value
 }
+
+// 比毫升更小的单位还有微升、纳升、皮升、飞升
+// 换算关系为：
+// 1L=1000mL
+// 1mL=1000μL
+// 1μL=1000nL
+// 1nL=1000pL
+// 1pL=1000fL
 
 /**
  *液体体积单位换算
@@ -111,20 +109,42 @@ export function molConvertConcentration(value: number, unit: string): number {
  * @return {*}  {number}
  */
 export function convertVolume(value: number, fromUnit: string, toUnit: string): number {
-  console.log('%c [ value ]-114', 'font-size:13px; background:#aef0f4; color:#f2ffff;', value)
   const conversionTable = {
-    'mL': 1,
-    'μL': 0.001,
-    'nL': 0.000001,
-    'pL': 0.000000001,
-    'L': 1000,
-    'cm³': 1,
-    'dm³': 1000,
+    'L': 1000000000000000,
+    'mL': 1000000000000,
+    'μL': 1000000000,
+    'nL': 1000000,
+    'pL': 1000,
+    'fL': 1,
+    'cm³': 1000000000000,
+    'dm³': 1000000000000000,
   }
 
   if (fromUnit in conversionTable && toUnit in conversionTable)
     return (value * conversionTable[fromUnit as keyof typeof conversionTable]) / conversionTable[toUnit as keyof typeof conversionTable]
 
-  // 默认单位是 mL
+  // 默认单位是飞升（fL）
   return value
+}
+
+// export function convertToScientificNotation(value: number): string {
+//   const exponent = Math.floor(Math.log10(value))
+//   const mantissa = value / 10 ** exponent
+//   return `${mantissa} x 10^${exponent}`
+// }
+export function convertToScientificNotation(value: number): string {
+  if (value < 10)
+    return String(value)
+
+  let exponent = 0
+  let mantissa = value
+
+  if (value !== 0) {
+    while (mantissa >= 10 || mantissa <= -10) {
+      mantissa /= 10
+      exponent++
+    }
+  }
+
+  return `${mantissa} x 10^${exponent}`
 }

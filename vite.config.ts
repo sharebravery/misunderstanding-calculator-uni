@@ -71,7 +71,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
               }
             : [])
 
-          if (ctx.pagesGlobConfig!.tabBar!.list.length <= 0)
+          if (ctx.pagesGlobConfig!.tabBar!.list.length <= 1)
             delete ctx.pagesGlobConfig!.tabBar
         },
       }),
