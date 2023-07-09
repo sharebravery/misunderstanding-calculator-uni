@@ -4,11 +4,9 @@
  * @Date: 2023-07-08 11:08:45
 -->
 <script lang="ts" setup>
-import Drawer from './components/Drawer.vue'
+// const drawerRef = ref()
 
-const drawerRef = ref()
-
-const mode = import.meta.env.MODE
+// const mode = import.meta.env.MODE
 </script>
 
 <template>
@@ -22,13 +20,8 @@ const mode = import.meta.env.MODE
       font-sans text="center"
       color-gray-700 dark:color-gray-200
     >
-      <view v-if="mode === 'development'">
-        <view v-drag class="bg-emerald rounded-half lh-10 h100 w100" @click="($refs.drawerRef as any).drawerRef.open()">
-          show
-        </view>
-        <Drawer ref="drawerRef" />
-      </view>
       <slot />
+      <TheFooter />
     </main>
   </view>
 </template>

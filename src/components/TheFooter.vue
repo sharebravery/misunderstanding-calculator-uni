@@ -4,12 +4,12 @@
  * @Date: 2023-06-28 09:44:47
 -->
 <template>
-  <div flex="~ gap-4" mt-5 text-xl justify-center>
-    <div title="Home" @click="router.replace('/index')">
-      <div i-carbon-campsite icon-btn />
-    </div>
+  <view class="absolute bottom-px">
+    <view class="text-sm c-coolGray">
+      ©2023 sharebravery@gmail.com
+    </view>
 
-    <div title="SubPages" @click="router.push('~/pages-sub/index')">
+    <!-- <div title="SubPages" @click="router.push('~/pages-sub/index')">
       <div i-carbon-sub-volume icon-btn />
     </div>
 
@@ -19,6 +19,6 @@
 
     <div icon-btn title="GitHub">
       <div i-carbon-logo-github />
-    </div>
-  </div>
+    </div> -->
+  </view>
 </template>

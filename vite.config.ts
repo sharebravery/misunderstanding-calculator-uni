@@ -70,6 +70,9 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                 selectedIconPath: e.tabBar!.selectedIconPath,
               }
             : [])
+
+          if (ctx.pagesGlobConfig!.tabBar!.list.length <= 0)
+            delete ctx.pagesGlobConfig!.tabBar
         },
       }),
 

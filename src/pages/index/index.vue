@@ -35,7 +35,7 @@ function handleTouchEnd() {
 </script>
 
 <template>
-  <view class="container h-screen">
+  <view class="container h-full">
     <view
       class="original-page"
       @touchstart="handleTouchStart"
@@ -52,7 +52,7 @@ function handleTouchEnd() {
       </uni-card>
 
       <button class="bg-amber" @click="router.push({ name: 'UnitConvert' })">
-        单位换算(现在只有这个能用一下)
+        单位换算(现在只有这个能用)
       </button>
 
       <text class="c-blue">

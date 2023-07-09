@@ -9,18 +9,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     CCountInput: typeof import('./components/CCountInput/index.vue')['default']
     CMpHtml: typeof import('./components/CMpHtml/index.vue')['default']
-    copy: typeof import('./components/CCountInput copy/index.vue')['default']
-    CountInput: typeof import('./components/CountInput/index.vue')['default']
     CZPaging: typeof import('./components/CZPaging/index.vue')['default']
-    MpHtml: typeof import('./components/MpHtml/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
     TheLogo: typeof import('./components/TheLogo.vue')['default']
-    VCountInput: typeof import('./components/VCountInput/index.vue')['default']
-    ZPaging: typeof import('./components/ZPaging/index.vue')['default']
-    ZPanding: typeof import('./components/ZPanding/index.vue')['default']
   }
 }
