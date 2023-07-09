@@ -12,7 +12,7 @@ interface IProps {
   unit: string
 }
 
-const props = withDefaults(defineProps<IProps>(), { unit: 'mM' })
+const props = withDefaults(defineProps<IProps>(), { unit: 'mL' })
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -21,14 +21,16 @@ const value = ref()
 /**
  * 显示值转换(非实际值，仅做显示)
  */
-watch(() => props.unit, (newUnit, oldUnit) => {
+watch(() => props, (newProps, oldProps) => {
   if (value.value === '')
     return value.value = null
 
-  const val = convertVolume(Number(props.modelValue), oldUnit, newUnit)
+  const val = convertVolume(Number(props.modelValue), oldProps.unit, newProps.unit)
+
+  value.value = convertVolume(val, 'fL', newProps.unit)
 
   emit('update:modelValue', val)
-})
+}, { deep: true })
 
 /**
  *

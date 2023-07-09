@@ -8,9 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CCountInput: typeof import('./components/CCountInput/index.vue')['default']
-    'CCountInput copy': typeof import('./components/CCountInput copy/index.vue')['default']
     CMpHtml: typeof import('./components/CMpHtml/index.vue')['default']
-    copy: typeof import('./components/CCountInput copy/index.vue')['default']
+    copy: typeof import('./components/VCountInput copy/index.vue')['default']
     CZPaging: typeof import('./components/CZPaging/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

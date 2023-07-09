@@ -18,20 +18,27 @@ const emit = defineEmits(['update:modelValue'])
 
 const value = ref()
 
-watch(() => props.unit, (unit) => {
-  console.log('%c [ unit ]-22', 'font-size:13px; background:#cb5541; color:#ff9985;', unit)
+/**
+ * 显示值转换(非实际值，仅做显示)
+ */
+watch(() => props, (newProps, oldProps) => {
   if (value.value === '')
     return value.value = null
 
-  const val = convertVolume(Number(props.modelValue), unit, 'fm')
+  const val = convertMolarConcentration(Number(props.modelValue), oldProps.unit, newProps.unit)
 
-  // value.value = val
+  value.value = convertMolarConcentration(val, 'fM', newProps.unit)
 
   emit('update:modelValue', val)
-})
+}, { deep: true })
 
+/**
+ *
+ * @param v 实际值转换（全部转换为fL）
+ */
 function onInput(v: string) {
-  const val = convertVolume(Number(v), props.unit, 'fm')
+  const val = convertMolarConcentration(Number(v), props.unit, 'fM')
+
   emit('update:modelValue', val)
 }
 </script>
