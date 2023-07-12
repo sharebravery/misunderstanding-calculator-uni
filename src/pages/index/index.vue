@@ -50,17 +50,6 @@ function handleTouchEnd() {
         开始浓度 × 开始体积 = 最终浓度 × 最终体积 | C1V1 = C2V2
       </uni-card>
 
-      <uni-card title="摩尔浓度计算器">
-        根据后续反馈再决定要不要开发
-      </uni-card>
-
-      <button class="bg-amber" @click="router.push({ name: 'UnitConvert' })">
-        单位换算(现在只有这个能用)
-      </button>
-
-      <text class="c-blue">
-        下滑常用公式查询以及单位换算
-      </text>
       <view>
         由于本人没有做过科研工作，所做出来的东西可能不合使用，比如实验室所需要的数据，计算方式，相关单位，名称等，请进行反馈
       </view>

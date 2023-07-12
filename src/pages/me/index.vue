@@ -3,7 +3,7 @@
  * @Author: sharebravery
  * @Date: 2023-07-08 13:21:34
 -->
-[<route lang="yaml">
+<route lang="yaml">
 name: Me
 style:
   navigationBarTitleText: 个人中心

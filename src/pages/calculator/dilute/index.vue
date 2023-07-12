@@ -51,7 +51,13 @@ function calculateDilution() {
 
 <template>
   <view class="container">
-    {{ info.v2 }}
+    <view>
+      开始浓度 × 开始体积 = 最终浓度 × 最终体积
+      <view>
+        C1V1 = C2V2
+      </view>
+    </view>
+
     <view>
       <view class="flex items-center">
         <text>

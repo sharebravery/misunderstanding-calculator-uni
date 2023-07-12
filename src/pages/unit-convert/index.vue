@@ -2,6 +2,9 @@
 name: UnitConvert
 style:
   navigationBarTitleText: 单位转换
+tabBar:
+  iconPath: static/images/tabBar/home.png
+  selectedIconPath: static/images/tabBar/selectedHome.png
 </route>
 
 <script setup lang="ts">
